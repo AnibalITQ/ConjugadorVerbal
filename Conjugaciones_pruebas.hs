@@ -4,6 +4,84 @@ ret r
     | r == 1 = main
     | r == 2 = putStrLn "Gracias por utilizar nuestro diccionario, cerrando programa..."
     | otherwise = putStrLn "Opcion invalida, cerrando programa..."
+esVerboInfinitivo :: String -> Bool
+esVerboInfinitivo palabra = any (`isSuffixOf` palabra) ["ar", "er", "ir"]
+
+conjugacionAutomatica :: String -> [String]
+conjugacionAutomatica verboInfinitivo
+    | "ar" `isSuffixOf` verboInfinitivo = conjugarAR verboInfinitivo
+    | "er" `isSuffixOf` verboInfinitivo = conjugarER verboInfinitivo
+    | "ir" `isSuffixOf` verboInfinitivo = conjugarIR verboInfinitivo
+    | otherwise = error "Verbo no reconocido como infinitivo válido."
+
+conjugarAR :: String -> [String]
+conjugarAR verboInfinitivo = [
+    verboInfinitivo,  -- Verbo en infinitivo
+    "Yo " ++ verboInfinitivo ++ "o",  -- Yo presente
+    "Tú " ++ verboInfinitivo ++ "as",  -- Tú presente
+    "Él " ++ verboInfinitivo ++ "a",  -- Él presente
+    "Ella " ++ verboInfinitivo ++ "a",  -- Ella presente
+    "Nosotros " ++ verboInfinitivo ++ "amos",  -- Nosotros presente
+    "Ustedes " ++ verboInfinitivo ++ "an",  -- Ustedes presente
+    "Yo " ++ verboInfinitivo ++ "é",  -- Yo pasado
+    "Tú " ++ verboInfinitivo ++ "aste",  -- Tú pasado
+    "Él " ++ verboInfinitivo ++ "ó",  -- Él pasado
+    "Ella " ++ verboInfinitivo ++ "ó",  -- Ella pasado
+    "Nosotros " ++ verboInfinitivo ++ "amos",  -- Nosotros pasado
+    "Ustedes " ++ verboInfinitivo ++ "aron",  -- Ustedes pasado
+    "Yo " ++ verboInfinitivo ++ "aré",  -- Yo futuro
+    "Tú " ++ verboInfinitivo ++ "arás",  -- Tú futuro
+    "Él " ++ verboInfinitivo ++ "ará",  -- Él futuro
+    "Ella " ++ verboInfinitivo ++ "ará",  -- Ella futuro
+    "Nosotros " ++ verboInfinitivo ++ "aremos",  -- Nosotros futuro
+    "Ustedes " ++ verboInfinitivo ++ "arán"  -- Ustedes futuro
+    ]
+
+conjugarER :: String -> [String]
+conjugarER verboInfinitivo = [
+    verboInfinitivo,  -- Verbo en infinitivo
+    "Yo " ++ verboInfinitivo ++ "o",  -- Yo presente
+    "Tú " ++ verboInfinitivo ++ "es",  -- Tú presente
+    "Él " ++ verboInfinitivo ++ "e",  -- Él presente
+    "Ella " ++ verboInfinitivo ++ "e",  -- Ella presente
+    "Nosotros " ++ verboInfinitivo ++ "emos",  -- Nosotros presente
+    "Ustedes " ++ verboInfinitivo ++ "en",  -- Ustedes presente
+    "Yo " ++ verboInfinitivo ++ "í",  -- Yo pasado
+    "Tú " ++ verboInfinitivo ++ "iste",  -- Tú pasado
+    "Él " ++ verboInfinitivo ++ "ió",  -- Él pasado
+    "Ella " ++ verboInfinitivo ++ "ió",  -- Ella pasado
+    "Nosotros " ++ verboInfinitivo ++ "imos",  -- Nosotros pasado
+    "Ustedes " ++ verboInfinitivo ++ "ieron",  -- Ustedes pasado
+    "Yo " ++ verboInfinitivo ++ "eré",  -- Yo futuro
+    "Tú " ++ verboInfinitivo ++ "erás",  -- Tú futuro
+    "Él " ++ verboInfinitivo ++ "erá",  -- Él futuro
+    "Ella " ++ verboInfinitivo ++ "erá",  -- Ella futuro
+    "Nosotros " ++ verboInfinitivo ++ "eremos",  -- Nosotros futuro
+    "Ustedes " ++ verboInfinitivo ++ "erán"  -- Ustedes futuro
+    ]
+
+conjugarIR :: String -> [String]
+conjugarIR verboInfinitivo = [
+    verboInfinitivo,  -- Verbo en infinitivo
+    "Yo " ++ verboInfinitivo ++ "o",  -- Yo presente
+    "Tú " ++ verboInfinitivo ++ "es",  -- Tú presente
+    "Él " ++ verboInfinitivo ++ "e",  -- Él presente
+    "Ella " ++ verboInfinitivo ++ "e",  -- Ella presente
+    "Nosotros " ++ verboInfinitivo ++ "imos",  -- Nosotros presente
+    "Ustedes " ++ verboInfinitivo ++ "en",  -- Ustedes presente
+    "Yo " ++ verboInfinitivo ++ "í",  -- Yo pasado
+    "Tú " ++ verboInfinitivo ++ "iste",  -- Tú pasado
+    "Él " ++ verboInfinitivo ++ "ió",  -- Él pasado
+    "Ella " ++ verboInfinitivo ++ "ió",  -- Ella pasado
+    "Nosotros " ++ verboInfinitivo ++ "imos",  -- Nosotros pasado
+    "Ustedes " ++ verboInfinitivo ++ "ieron",  -- Ustedes pasado
+    "Yo " ++ verboInfinitivo ++ "iré",  -- Yo futuro
+    "Tú " ++ verboInfinitivo ++ "irás",  -- Tú futuro
+    "Él " ++ verboInfinitivo ++ "irá",  -- Él futuro
+    "Ella " ++ verboInfinitivo ++ "irá",  -- Ella futuro
+    "Nosotros " ++ verboInfinitivo ++ "iremos",  -- Nosotros futuro
+    "Ustedes " ++ verboInfinitivo ++ "irán"  -- Ustedes futuro
+    ]
 
 afirmconjugacion res palabras
     | res == 1 = do
@@ -92,24 +170,22 @@ conjugaciones n palabra palabras = do
     putStrLn $ "Ella: " ++  (palabras !! (n+16))
     putStrLn $ "Nosotros: " ++  (palabras !! (n+17))
     putStrLn $ "Ustedes: " ++  (palabras !! (n+18))
-    putStrLn "Hay algo que está mal en la conjugación?"
-    putStrLn "1- Si \n 2- No"
-    res <- readLn :: IO Int
-    afirmconjugacion res palabras 
+   
 
 coincidencia n palabra palabras
     | n >= length palabras = do 
-        putStrLn "Palabra no encontrada. \n Desea agregar esta palabra? "
+        putStrLn "Palabra no encontrada. \n vamos a conjugar y posteriormente usted validara esta palabra "
+        let conjugacionesAuto = conjugacionAutomatica palabra
+        putStrLn "Conjugaciones automáticas:"
+        mapM_ putStrLn conjugacionesAuto
+        putStrLn "Hay algo que está mal en la conjugación?"
         putStrLn "1- Si \n 2- No"
-        des <-readLn :: IO Int
-        agregarverbo des palabras
+        res <- readLn :: IO Int
+        afirmconjugacion res palabras 
     | palabra == (palabras !! n) = do
         putStrLn "Conjugaciones: "
         conjugaciones n palabra palabras
     | otherwise = coincidencia (n+1) palabra palabras
-
-esVerboInfinitivo :: String -> Bool
-esVerboInfinitivo palabra = any (`isSuffixOf` palabra) ["ar", "er", "ir"]
 
 main :: IO ()
 main = do 
