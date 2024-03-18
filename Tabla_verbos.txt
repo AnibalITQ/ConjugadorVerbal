@@ -1,0 +1,14 @@
+Verbo_Infinitivo YoP TuP ElP EllaP NosotrosP UstedesP YoPa TuPa ElPa EllaPa NosotrosPa UstedesPa YoF TuF ElF EllaF NosotrosF UstedesF
+Comer Como Comes Come Come Comemos Comen Comi Comiste Comio Comio Comimos Comieron Comere Comeras Comera Comera Comeremos Comeran
+Jugar Juego Juegas Juega Juega Jugamos Juegan Jugue Jugaste Jugo Jugo Jugamos Jugaron Jugare Jugaras Jugara Jugara Jugaremos Jugaran
+Vestir Visto Vistes Viste Viste Vestimos Visten Vesti Vestiste Vistio Vistio Vestimos Vistieron Vestire Vestiras Vestira Vestira Vestiremos Vestiran
+Entrenar Entreno Entrenas Entrena Entrena Entrenamos Entrenan Entrene Entrenaste Entreno Entreno Entrenamos Entrenaron Entrenare Entrenaras Entrenara Entrenara Entrenaremos Entrenaran
+Ordenar Ordeno Ordenas Ordena Ordena Ordenamos Ordenan Ordene Ordenaste Ordeno Ordeno Ordenamos Ordenron Ordenare Ordenaras Ordenara Ordenara Ordenaremos Ordenaran
+Ver Veo Ves Ve Ve Vemos Ven Vi Viste Vio Vio Vimos Vieron Vere Veras Vera Vera Veremos Veran
+Caminar Camino Caminas Camina Camina Caminamos Caminan Camine Caminaste Camino Camino Caminamos Caminaron Caminare Caminaras Caminara Caminara Caminaremos Caminaran
+Tirar Tiro Tiras Tira Tira Tiramos Tiran Tire Tiraste Tiro Tiro Tiramos Tiraron Tirare Tiraras Tirara Tirara Tiraremos Tiraran
+Crecer Crezco Creces Crece Crece Crecemos Crecen Creci Creciste Crecio Crecio Crecimos Crecieron Crecere Creceras Crecera Crecera Creceremos Creceran
+Oir Oigo Oyes Oye Oye Oimos Oyen Oi Oiste Oyo Oyo Oimos Oyeron Oire Oiras Oira Oira Oiremos Oiran
+Saludar Saludo Saludas Saluda Saluda Saludamos Saludan Salude Saludaste Saludo Saludo Saludamos Saludaron Saludare Saludaras Saludara Saludara Saludaremos Saludaran
+ 
+ 
