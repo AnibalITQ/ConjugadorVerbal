@@ -13,53 +13,58 @@ esVerboInfinitivo palabra = any (`isSuffixOf` palabra) ["ar", "er", "ir"]
 conjugacionAutomatica :: String -> IO ()
 conjugacionAutomatica verbo = do
     let raiz = take (length verbo - 2) verbo
-        sufijoPresenteP
+        sufijoPresenteYo
             | "ar" `isSuffixOf` verbo = "o"
             | "er" `isSuffixOf` verbo = "o"
             | "ir" `isSuffixOf` verbo = "o"
             | otherwise = ""
-        sufijoPresenteT
+        sufijoPresenteTuElUst
             | "ar" `isSuffixOf` verbo = "a"
             | "er" `isSuffixOf` verbo = "e"
             | "ir" `isSuffixOf` verbo = "e"
             | otherwise = ""
-        sufijoPresenteS
+        sufijoPresenteNos
             | "ar" `isSuffixOf` verbo = "a"
             | "er" `isSuffixOf` verbo = "e"
             | "ir" `isSuffixOf` verbo = "i"
             | otherwise = ""
-        sufijoPasadoP
+        sufijoPasadoYo
             | "ar" `isSuffixOf` verbo = "é"
             | "er" `isSuffixOf` verbo = "í"
             | "ir" `isSuffixOf` verbo = "í"
             | otherwise = ""
-        sufijoPasadoS
+        sufijoPasadoTuNos
             | "ar" `isSuffixOf` verbo = "a"
             | "er" `isSuffixOf` verbo = "i"
             | "ir" `isSuffixOf` verbo = "i"
             | otherwise = ""
-        sufijoPasadoT
+        sufijoPasadoUst
             | "ar" `isSuffixOf` verbo = "a"
             | "er" `isSuffixOf` verbo = "ie"
             | "ir" `isSuffixOf` verbo = "ie"
+            | otherwise = ""
+        sufijoPasadoEl
+            | "ar" `isSuffixOf` verbo = ""
+            | "er" `isSuffixOf` verbo = "i"
+            | "ir" `isSuffixOf` verbo = "i"
             | otherwise = ""
         sufijoFuturo
             | "ar" `isSuffixOf` verbo = "a"
             | "er" `isSuffixOf` verbo = "e"
             | "ir" `isSuffixOf` verbo = "i"
             | otherwise = ""
-        conjugacionPresenteYo = raiz ++ sufijoPresenteP
-        conjugacionPresenteTu = raiz ++ sufijoPresenteT ++ "s"
-        conjugacionPresenteEl = raiz ++ sufijoPresenteT
-        conjugacionPresenteElla = raiz ++ sufijoPresenteT
-        conjugacionPresenteNosotros = raiz ++ sufijoPresenteS ++ "mos"
-        conjugacionPresenteUstedes = raiz ++ sufijoPresenteT ++ "n"
-        conjugacionPasadoYo = raiz ++ sufijoPasadoP
-        conjugacionPasadoTu = raiz ++ sufijoPasadoS ++ "ste"
-        conjugacionPasadoEl = raiz  ++ "ó"
-        conjugacionPasadoElla = raiz  ++ "ó"
-        conjugacionPasadoNosotros = raiz ++ sufijoPasadoS ++ "mos"
-        conjugacionPasadoUstedes = raiz ++ sufijoPasadoT ++ "ron"
+        conjugacionPresenteYo = raiz ++ sufijoPresenteYo
+        conjugacionPresenteTu = raiz ++ sufijoPresenteTuElUst ++ "s"
+        conjugacionPresenteEl = raiz ++ sufijoPresenteTuElUst
+        conjugacionPresenteElla = raiz ++ sufijoPresenteTuElUst
+        conjugacionPresenteNosotros = raiz ++ sufijoPresenteNos ++ "mos"
+        conjugacionPresenteUstedes = raiz ++ sufijoPresenteTuElUst ++ "n"
+        conjugacionPasadoYo = raiz ++ sufijoPasadoYo
+        conjugacionPasadoTu = raiz ++ sufijoPasadoTuNos ++ "ste"
+        conjugacionPasadoEl = raiz++ sufijoPasadoEl  ++ "ó"
+        conjugacionPasadoElla = raiz ++ sufijoPasadoEl ++ "ó"
+        conjugacionPasadoNosotros = raiz ++ sufijoPasadoTuNos ++ "mos"
+        conjugacionPasadoUstedes = raiz ++ sufijoPasadoUst ++ "ron"
         conjugacionFuturoYo = raiz ++ sufijoFuturo ++ "ré"
         conjugacionFuturoTu = raiz ++ sufijoFuturo ++ "rás"
         conjugacionFuturoEl = raiz ++ sufijoFuturo ++ "rá"

@@ -14,4 +14,5 @@ Saludar Saludo Saludas Saluda Saluda Saludamos Saludan Salude Saludaste Saludo S
 
 Amar Amo Amas Ama Ama Amamos Aman Amé Amaste Amó Amó Amamos Amaron Amaré Amarás Amará Amará Amaremos Amarán
 
-Tener Tengo Tienes Tiene Tiene Tenemos Tienen Tuve Tuviste Tuvo Tuvo Tuvimos Tuvieron Tendré Tendrás Tendrá Tendrá Tendremos Tendrán
+Tener Tengo Tienes Tiene Tiene Tenemos Tienen Tuve Tuviste Tuvo Tuvo Tuvimos Tuvieron Tendré Tendrás Tendrá Tendrá Tendremos TendránBeber Bebo Bebes Bebe Bebe Bebemos Beben Bebí Bebiste Bebió Bebió Bebimos Bebieron Beberé Beberás Beberá Beberá Beberemos Beberán
+
