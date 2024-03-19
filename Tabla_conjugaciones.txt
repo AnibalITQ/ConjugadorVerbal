@@ -2,4 +2,75 @@ TABLA DE CONJUGACIONES
 
 Verbos YoP TuP ElP EllaP EsoP NosotrosP UstedesP YoPa TuPa ElPa EllaPa EsoPa NosotrosPa UstedesPa YoF TuF ElF EllaF EsoF NosotrosF UstedesF
 
- 
+ DIVIDE LOS VERBOS EN PRIMERA Y TERCERA PERSONA
+
+ Verbos terminados en 'ar'
+Presente:
+
+Yo: -o (hablo)
+Tú: -as (hablas)
+Él/Ella: -a (habla)
+Nosotros/Nosotras: -amos (hablamos)
+Ustedes/Ellos/Ellas: -an (hablan)
+Pasado:
+
+Yo: -é (hablé)
+Tú: -aste (hablaste)
+Él/Ella: -ó (habló)
+Nosotros/Nosotras: -amos (hablamos)
+Ustedes/Ellos/Ellas: -aron (hablaron)
+Futuro:
+
+Yo: -aré (hablaré)
+Tú: -arás (hablarás)
+Él/Ella: -ará (hablará)
+Nosotros/Nosotras: -aremos (hablaremos)
+Ustedes/Ellos/Ellas: -arán (hablarán)
+
+----------------------------
+Verbos terminados en 'er'
+Presente:
+
+Yo: -o (como)
+Tú: -es (comes)
+Él/Ella: -e (come)
+Nosotros/Nosotras: -emos (comemos)
+Ustedes/Ellos/Ellas: -en (comen)
+Pasado:
+
+Yo: -í (comí)
+Tú: -iste (comiste)
+Él/Ella: -ió (comió)
+Nosotros/Nosotras: -imos (comimos)
+Ustedes/Ellos/Ellas: -ieron (comieron)
+Futuro:
+
+Yo: -eré (comeré)
+Tú: -erás (comerás)
+Él/Ella: -erá (comerá)
+Nosotros/Nosotras: -eremos (comeremos)
+Ustedes/Ellos/Ellas: -erán (comerán)
+
+--------------------------------------
+Verbos terminados en 'ir'
+Presente:
+
+Yo: -o (vivo)
+Tú: -es (vives)
+Él/Ella: -e (vive)
+Nosotros/Nosotras: -imos (vivimos)
+Ustedes/Ellos/Ellas: -en (viven)
+Pasado:
+
+Yo: -í (viví)
+Tú: -iste (viviste)
+Él/Ella: -ió (vivió)
+Nosotros/Nosotras: -imos (vivimos)
+Ustedes/Ellos/Ellas: -ieron (vivieron)
+Futuro:
+
+Yo: -iré (viviré)
+Tú: -irás (vivirás)
+Él/Ella: -irá (vivirá)
+Nosotros/Nosotras: -iremos (viviremos)
+Ustedes/Ellos/Ellas: -irán (vivirán)
