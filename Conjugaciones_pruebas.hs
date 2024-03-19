@@ -1,5 +1,7 @@
 import Data.List
+import System.IO
 
+import GHC.IO.Encoding
 ret r
     | r == 1 = main
     | r == 2 = putStrLn "Gracias por utilizar nuestro diccionario, cerrando programa..."
@@ -54,8 +56,8 @@ conjugacionAutomatica verbo = do
         conjugacionPresenteUstedes = raiz ++ sufijoPresenteT ++ "n"
         conjugacionPasadoYo = raiz ++ sufijoPasadoP
         conjugacionPasadoTu = raiz ++ sufijoPasadoS ++ "ste"
-        conjugacionPasadoEl = raiz ++ sufijoPasadoT ++ "ó"
-        conjugacionPasadoElla = raiz ++ sufijoPasadoT ++ "ó"
+        conjugacionPasadoEl = raiz  ++ "ó"
+        conjugacionPasadoElla = raiz  ++ "ó"
         conjugacionPasadoNosotros = raiz ++ sufijoPasadoS ++ "mos"
         conjugacionPasadoUstedes = raiz ++ sufijoPasadoT ++ "ron"
         conjugacionFuturoYo = raiz ++ sufijoFuturo ++ "ré"
@@ -65,14 +67,14 @@ conjugacionAutomatica verbo = do
         conjugacionFuturoNosotros = raiz ++ sufijoFuturo ++ "remos"
         conjugacionFuturoUstedes = raiz ++ sufijoFuturo ++ "rán"
         conjugacionCompleta = verbo ++ " " ++ conjugacionPresenteYo ++ " " ++ conjugacionPresenteTu ++ " " ++ conjugacionPresenteEl ++ " " ++ conjugacionPresenteElla ++  " " ++ conjugacionPresenteNosotros ++ " " ++ conjugacionPresenteUstedes ++ " " ++ conjugacionPasadoYo ++ " " ++ conjugacionPasadoTu ++ " " ++ conjugacionPasadoEl ++ " " ++ conjugacionPasadoElla ++ " " ++ conjugacionPasadoNosotros ++ " " ++ conjugacionPasadoUstedes ++ " " ++ conjugacionFuturoYo ++ " " ++ conjugacionFuturoTu ++ " " ++ conjugacionFuturoEl ++ " " ++ conjugacionFuturoElla ++ " " ++ conjugacionFuturoNosotros ++ " " ++ conjugacionFuturoUstedes
-        conjugacionCompletaImp = verbo++ "PRESENTE:\n" ++ "Yo " ++ conjugacionPresenteYo ++ " Tu " ++ conjugacionPresenteTu ++ " El " ++ conjugacionPresenteEl ++ " Ella " ++ conjugacionPresenteElla ++  " Nosotros " ++ conjugacionPresenteNosotros ++ " Ustedes " ++ conjugacionPresenteUstedes ++"PASADO:\n"++ " Yo " ++ conjugacionPasadoYo ++ " Tu " ++ conjugacionPasadoTu ++ " El " ++ conjugacionPasadoEl ++ " Ella " ++ conjugacionPasadoElla ++ " Nosotros " ++ conjugacionPasadoNosotros ++ " Ustedes " ++ conjugacionPasadoUstedes ++"FUTURO:\n"++ " Yo " ++ conjugacionFuturoYo ++ " Tu " ++ conjugacionFuturoTu ++ " El " ++ conjugacionFuturoEl ++ " Ella " ++ conjugacionFuturoElla ++ " Nosotros " ++ conjugacionFuturoNosotros ++ " Ustedes " ++ conjugacionFuturoUstedes
+        conjugacionCompletaImp = verbo++ "PRESENTE:\n" ++ "Yo " ++ conjugacionPresenteYo ++ " Tu " ++ conjugacionPresenteTu ++ " El " ++ conjugacionPresenteEl ++ " Ella " ++ conjugacionPresenteElla ++  " Nosotros " ++ conjugacionPresenteNosotros ++ " Ustedes " ++ conjugacionPresenteUstedes ++"\nPASADO:\n"++ " Yo " ++ conjugacionPasadoYo ++ " Tu " ++ conjugacionPasadoTu ++ " El " ++ conjugacionPasadoEl ++ " Ella " ++ conjugacionPasadoElla ++ " Nosotros " ++ conjugacionPasadoNosotros ++ " Ustedes " ++ conjugacionPasadoUstedes ++"\nFUTURO:\n"++ " Yo " ++ conjugacionFuturoYo ++ " Tu " ++ conjugacionFuturoTu ++ " El " ++ conjugacionFuturoEl ++ " Ella " ++ conjugacionFuturoElla ++ " Nosotros " ++ conjugacionFuturoNosotros ++ " Ustedes " ++ conjugacionFuturoUstedes
     putStrLn $ "LA CONJUGACION ES: \n" ++conjugacionCompletaImp
     putStrLn "Hay algo que está mal en la conjugación?"
     putStrLn "1- Si \n 2- No"
     res <- readLn :: IO Int
     if res==1
         then agregarverbo res
-        else appendFile "tabla_verbos.txt" (conjugacionCompleta ++ "\n")
+        else withFile "tabla_verbos.txt" AppendMode (\h -> hSetEncoding h utf8 >> hPutStrLn h (conjugacionCompleta ++ "\n"))
     putStrLn $ "La conjugación automática para el verbo '" ++ verbo ++ "' se ha guardado con éxito en el diccionario."
 
 afirmconjugacion :: (Eq a, Num a) => a -> p -> IO ()
@@ -176,6 +178,7 @@ coincidencia n palabra palabras
 
 main :: IO ()
 main = do 
+    setLocaleEncoding utf8 -- Establecer la codificación UTF-8
     archivo <- readFile "tabla_verbos.txt"
     let lineas = lines archivo
         palabras = concatMap words lineas
